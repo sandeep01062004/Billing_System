@@ -1,0 +1,44 @@
+package questions;
+import java.util.*;
+
+class questions{
+	private int salary;
+	private int shift;
+	private int saving;
+	questions(int salary,int shift){
+		this.salary=salary;
+		this.shift=shift;
+	}
+	public int getsalary() {
+		return salary;
+	}
+	public int getshift() {
+		return shift;
+	}
+	public int getsaving() {
+		return saving;
+	}
+	public void calculateSal(int salary,int shift) {
+		saving=salary-(salary*50/100)+shift*(salary*2/100);
+		System.out.println(saving);
+	}
+}
+public class question {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int s=sc.nextInt();
+		int a=sc.nextInt();
+		questions q=new questions(s,a);
+		if(s<=0) {
+			System.out.println("Salary too small");
+		}else if(s>8000) {
+			System.out.println("Salary too large");
+		}else if(a<=0) {
+			System.out.println("Shifts too small");
+		}else {
+			q.calculateSal(s,a);
+		}
+
+	}
+
+}
